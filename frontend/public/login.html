@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Donix Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/main.css"> </head>
+<body >
+    <nav class="navbar">
+        <div class="logo">🩸 Donix</div>
+        <ul class="nav-links">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="search.html">Search Donor</a></li>
+            <li><a href="login.html">SignIn</a></li>
+            <li><a href="Register_Donor.html">Register Donor</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <div class="centered-layout">
+    <div class="glass-card login-box">
+        <div class="logo">🩸 Donix</div>
+        <h2>Welcome Back</h2>
+        <p style="color: var(--text-gray); margin-bottom: 30px;">Sign in to manage your profile or dashboard.</p>
+
+        <form id="unifiedLoginForm">
+            <div class="input-group-vertical">
+                <input type="email" id="email" placeholder="Email Address" class="glass-input" required>
+                <input type="password" id="password" placeholder="Password" class="glass-input" required>
+            </div>
+            
+            <button type="submit" class="btn primary w-100">Sign In</button>
+        </form>
+
+        <div class="login-footer">
+            <p>New donor? <a href="Register_Donor.html" style="color: var(--primary-red);">Register Here</a></p>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3 class="footer-logo">🩸 Donix</h3>
+            <p class="footer-desc">Connecting heroes with those in need. Our platform ensures that blood donation is fast, secure, and accessible to everyone.</p>
+            <div class="system-status">
+                <span class="status-dot"></span>
+                System Operational: 24/7 Support
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Find Donors</a></li>
+                <li><a href="Register_Donor.html">Register</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Get in Touch</h4>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p class="footer-contact">support@donix.com</p>
+            <p class="footer-contact">+1 (555) 000-LIFE</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Donix. Designed for Life. <span class="divider">|</span> <a href="#">Privacy Policy</a> <span class="divider">|</span> <a href="#">Terms of Service</a></p>
+    </div>
+</footer>
+    
+    <script src="../js/auth.js"></script>
+</body>
+</html>

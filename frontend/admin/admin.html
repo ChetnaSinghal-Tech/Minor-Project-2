@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel | Donix Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/main.css">
+    <link rel="stylesheet" href="../assets/admin.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-wrapper">
+        <aside class="admin-sidebar">
+            <div class="logo">🩸 Donix Admin</div>
+            <nav class="admin-nav">
+                <a href="#" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                
+                <a href="../public/search.html"><i class="fa-solid fa-users"></i> Donor Database</a>
+                
+                <a href="#"><i class="fa-solid fa-truck-medical"></i> Requests</a>
+                
+                <a href="#" class="logout logout-trigger">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </nav>
+        </aside>
+
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>System Overview</h1>
+                <div class="system-time">Last Update: Real-time</div>
+            </header>
+
+            <div class="stat-grid">
+                <div class="glass-card stat-card red-border">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div>
+                        <h3>1,204</h3>
+                        <p>Total Units Collected</p>
+                    </div>
+                </div>
+                <div class="glass-card stat-card">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <div>
+                        <h3>42</h3>
+                        <p>New Donors Today</p>
+                    </div>
+                </div>
+                <div class="glass-card stat-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h3>8</h3>
+                        <p>Pending Emergencies</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card table-wrapper">
+                <h3>Recent Emergency Requests</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Urgency</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Amitabh B.</td>
+                            <td><span class="badge">O-</span></td>
+                            <td>City Hospital</td>
+                            <td><span class="status-pulse-small"></span> Critical</td>
+                            <td><button class="btn-text">Resolve</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/auth.js"></script>
+</body>
+</html>
