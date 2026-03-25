@@ -4,7 +4,7 @@ if (window.location.pathname.includes('/admin/')) {
     if (!isLoggedIn) {
         alert("Access Denied. Please login first.");
         // FIX: Use the full path that worked for you
-        window.location.href = "/frontend/public/login.html";
+        window.location.href = "../public/login.html";
     }
 }
 
@@ -19,7 +19,7 @@ if (loginForm) {
         if (email === "admin@donix.com" && password === "admin123") {
             localStorage.setItem('isAdminLoggedIn', 'true');
             alert("Access Granted: Welcome Chief Admin");
-            window.location.href = "/frontend/admin/admin.html";
+            window.location.href = "../admin/admin.html";
         } else {
             alert("Welcome back, Hero!");
             // Being inside /public/ already, this works
@@ -36,7 +36,7 @@ function handleLogout() {
     alert("Logged out successfully.");
 
     // This is the absolute path to your public home page
-    window.location.href = "/frontend/public/index.html";
+    window.location.href = "../public/index.html";
 }
 
 // Global click listener
@@ -46,4 +46,20 @@ document.addEventListener('click', (e) => {
         e.preventDefault(); // This stops the browser from trying to follow any href
         handleLogout();
     }
+});
+
+
+//for removing the row 
+const buttons = document.querySelectorAll(".btn-text-1");
+
+buttons.forEach(function(button){
+
+button.addEventListener("click", function(){
+
+const row = this.closest("tr");
+
+row.remove();
+
+});
+
 });
