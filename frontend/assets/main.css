@@ -561,6 +561,58 @@ body {
     text-decoration: none;
 }
 
+/* css for password and confirm password */
+
+/* Styling for all input groups */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* This targets your Name, Email, and the NEW Password fields */
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box; /* Crucial for width: 100% */
+}
+
+/* Highlight effect when user clicks the box */
+.input-group input:focus {
+    border-color: #e63946; /* Donix Red */
+    box-shadow: 0 0 8px rgba(230, 57, 70, 0.2);
+    background-color: #fff;
+}
+
+/* Styling for the Submit Button */
+#regForm button {
+    width: 100%;
+    background-color: #e63946;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#regForm button:hover {
+    background-color: #c1121f;
+}
 /* Admin Stat Cards */
 .stat-card {
     text-align: left;

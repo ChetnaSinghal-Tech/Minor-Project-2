@@ -9,21 +9,46 @@ if (window.location.pathname.includes('/admin/')) {
 }
 
 // --- 2. LOGIN LOGIC ---
+// --- LOGIN LOGIC ---
 const loginForm = document.getElementById('unifiedLoginForm');
+
 if (loginForm) {
-    loginForm.addEventListener('submit', function(e) {
+    loginForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
-        if (email === "admin@donix.com" && password === "admin123") {
-            localStorage.setItem('isAdminLoggedIn', 'true');
-            alert("Access Granted: Welcome Chief Admin");
-            window.location.href = "../admin/admin.html";
-        } else {
-            alert("Welcome back, Hero!");
-            // Being inside /public/ already, this works
-            window.location.href = "index.html"; 
+        try {
+            const response = await fetch("http://localhost:3000/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+
+                // ✅ Save role
+                localStorage.setItem('userRole', data.role);
+
+                // ✅ VERY IMPORTANT (Fix your error)
+                if (data.role === "admin") {
+                    localStorage.setItem('isAdminLoggedIn', "true");
+                }
+
+                alert(data.message);
+
+                // ✅ Redirect
+                window.location.href = data.redirect;
+
+            } else {
+                alert(data.message);
+            }
+
+        } catch (error) {
+            alert("Error: Server not running!");
         }
     });
 }

@@ -123,40 +123,36 @@
 
             <div id="section-profile" class="dashboard-view" style="display:none;">
                 <div class="glass-card">
-                    <h3>Edit Profile</h3>
+                    <h3>My Registration Details</h3>
 
                     <form id="profileForm">
                         <div class="form-row" style="display: flex; gap: 20px; margin-bottom: 25px;">
                             <div style="flex: 1;">
                                 <label>Full Name</label>
-                                <input type="text" id="editName" value="Sarah">
+                                <input type="text" id="editName" value="" readonly>
                             </div>
                             <div style="flex: 1;">
                                 <label>Blood Type</label>
-                                <select id="editBlood">
-                                    <option value="B+">B+</option>
-                                    <option value="A+">A+</option>
-                                    <option value="O+">O+</option>
-                                    <option value="AB+">AB+</option>
-                                </select>
+                                <input type="text" id="editBlood" value="" readonly>
                             </div>
                         </div>
 
                         <div style="margin-bottom: 25px;">
-                            <label>Email Address</label>
-                            <input type="email" id="editEmail" value="sarah.j@donix.com" disabled>
+                            <label>Registered Email Address</label>
+                            <input type="email" id="editEmail" value="" disabled>
                         </div>
 
-                        <div class="checkbox-container">
+                        <div class="checkbox-container"
+                            style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
                             <input type="checkbox" id="notifyCheck" checked>
-                            <label for="notifyCheck" style="margin: 0; text-align: left;">Receive SMS alerts for
-                                Emergency Needs in Delhi</label>
+                            <label for="notifyCheck" style="margin: 0; text-align: left;">
+                                Receive alerts for Emergency Needs in your area
+                            </label>
                         </div>
 
-                        <div class="form-actions">
-                            <button type="submit" class="btn primary">Save Changes</button>
-                            <button type="button" class="btn" style="background: #eee; color: #333;">Cancel</button>
-                        </div>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">
+                            * To change your registered details, please contact the site administrator.
+                        </p>
                     </form>
                 </div>
             </div>

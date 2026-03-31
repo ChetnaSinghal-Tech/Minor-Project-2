@@ -1,190 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Become a Hero | Donix</title>
+    <title>Become a Hero | Donix</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link rel="stylesheet" href="../assets/main.css">
+    <link rel="stylesheet" href="../assets/main.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-<div class="logo">🩸 Donix</div>
+    <nav class="navbar">
+        <div class="logo">🩸 Donix</div>
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="search.html">Search Donor</a></li>
-<li><a href="login.html">SignIn</a></li>
-<li><a href="Register_Donor.html" class="active">Register Donor</a></li>
-<li><a href="about.html">About</a></li>
-</ul>
-</nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search Donor</a></li>
+            <li><a href="login.html">SignIn</a></li>
+            <li><a href="Register_Donor.html" class="active">Register Donor</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
 
-<section class="registration-layout">
+    <section class="registration-layout">
 
-<div class="info-side">
+        <div class="info-side">
 
-<span class="badge">Join 1,200+ Heroes</span>
+            <span class="badge">Join 1,200+ Heroes</span>
 
-<h1>Your Blood Type is <br><span>Someone's Hope.</span></h1>
+            <h1>Your Blood Type is <br><span>Someone's Hope.</span></h1>
 
-<p>
-Registration takes less than 2 minutes. 
-Your data is encrypted and only shared with verified medical seekers.
-</p>
+            <p>
+                Registration takes less than 2 minutes.
+                Your data is encrypted and only shared with verified medical seekers.
+            </p>
 
-<ul class="benefit-list">
-<li><i class="fa-solid fa-check-circle"></i> Instant Emergency Alerts</li>
-<li><i class="fa-solid fa-check-circle"></i> Digital Donor ID</li>
-<li><i class="fa-solid fa-check-circle"></i> Track your Impact</li>
-</ul>
+            <ul class="benefit-list">
+                <li><i class="fa-solid fa-check-circle"></i> Instant Emergency Alerts</li>
+                <li><i class="fa-solid fa-check-circle"></i> Digital Donor ID</li>
+                <li><i class="fa-solid fa-check-circle"></i> Track your Impact</li>
+            </ul>
 
-</div>
+        </div>
 
-<div class="glass-card form-box">
+        <div class="glass-card form-box">
 
-<form id="regForm">
+            <form id="regForm">
 
-<div class="input-row">
+                <div class="input-row">
 
-<input
-type="text"
-id="name"
-placeholder="Full Name"
-class="glass-input"
-required
->
+                    <input type="text" id="name" placeholder="Full Name" class="glass-input" required>
 
-<select
-id="blood"
-class="glass-input"
-required
->
+                    <select id="blood" class="glass-input" required>
 
-<option value="">Blood Group</option>
-<option value="A+">A+</option>
-<option value="O-">O-</option>
-<option value="B+">B+</option>
-<option value="AB+">AB+</option>
+                        <option value="">Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="O-">O-</option>
+                        <option value="B+">B+</option>
+                        <option value="AB+">AB+</option>
 
-</select>
+                    </select>
 
-</div>
+                </div>
 
-<input
-type="email"
-id="email"
-placeholder="Email Address"
-class="glass-input"
-required
->
+                <input type="email" id="email" placeholder="Email Address" class="glass-input" required>
 
-<input
-type="tel"
-id="phone"
-placeholder="Phone Number (e.g. +91...)"
-class="glass-input"
-required
->
+                <div class="input-group">
+                    <label for="password">Create Password</label>
+                    <input type="password" id="password" required placeholder="Enter strong password">
+                </div>
 
-<input
-type="text"
-id="city"
-placeholder="Your City / Location"
-class="glass-input"
-required
->
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required placeholder="Repeat password">
+                </div>
 
-<div class="legal-text">
+                <input type="tel" id="phone" placeholder="Phone Number (e.g. +91...)" class="glass-input" required>
 
-<input type="checkbox" id="terms" required>
+                <input type="text" id="city" placeholder="Your City / Location" class="glass-input" required>
 
-<label for="terms">
-I agree to be contacted for emergency blood requirements.
-</label>
+                <div class="legal-text">
 
-</div>
+                    <input type="checkbox" id="terms" required>
 
-<button type="submit" class="btn primary w-100">
-Register as Donor
-</button>
+                    <label for="terms">
+                        I agree to be contacted for emergency blood requirements.
+                    </label>
 
-</form>
+                </div>
 
-</div>
+                <button type="submit" class="btn primary w-100">
+                    Register as Donor
+                </button>
 
-</section>
+            </form>
 
-<footer class="footer">
+        </div>
 
-<div class="footer-container">
+    </section>
 
-<div class="footer-col">
+    <footer class="footer">
 
-<h3 class="footer-logo">🩸 Donix</h3>
+        <div class="footer-container">
 
-<p class="footer-desc">
-Connecting heroes with those in need. 
-Our platform ensures that blood donation is fast, secure, and accessible to everyone.
-</p>
+            <div class="footer-col">
 
-<div class="system-status">
-<span class="status-dot"></span>
-System Operational: 24/7 Support
-</div>
+                <h3 class="footer-logo">🩸 Donix</h3>
 
-</div>
+                <p class="footer-desc">
+                    Connecting heroes with those in need.
+                    Our platform ensures that blood donation is fast, secure, and accessible to everyone.
+                </p>
 
-<div class="footer-col">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    System Operational: 24/7 Support
+                </div>
 
-<h4>Quick Links</h4>
+            </div>
 
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="search.html">Find Donors</a></li>
-<li><a href="Register_Donor.html">Register</a></li>
-<li><a href="about.html">About Us</a></li>
-</ul>
+            <div class="footer-col">
 
-</div>
+                <h4>Quick Links</h4>
 
-<div class="footer-col">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Find Donors</a></li>
+                    <li><a href="Register_Donor.html">Register</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
 
-<h4>Get in Touch</h4>
+            </div>
 
-<div class="social-links">
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-twitter"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
-</div>
+            <div class="footer-col">
 
-<p class="footer-contact">support@donix.com</p>
-<p class="footer-contact">+1 (555) 000-LIFE</p>
+                <h4>Get in Touch</h4>
 
-</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
 
-</div>
+                <p class="footer-contact">support@donix.com</p>
+                <p class="footer-contact">+1 (555) 000-LIFE</p>
 
-<div class="footer-bottom">
-<p>
-© 2026 Donix. Designed for Life.
-<span class="divider">|</span>
-<a href="#">Privacy Policy</a>
-<span class="divider">|</span>
-<a href="#">Terms of Service</a>
-</p>
-</div>
+            </div>
 
-</footer>
+        </div>
 
-<!-- JS file -->
-<script src="../js/register.js"></script>
+        <div class="footer-bottom">
+            <p>
+                © 2026 Donix. Designed for Life.
+                <span class="divider">|</span>
+                <a href="#">Privacy Policy</a>
+                <span class="divider">|</span>
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+
+    </footer>
+
+    <!-- JS file -->
+    <script src="../js/register.js"></script>
 
 </body>
+
 </html>
