@@ -13,13 +13,7 @@
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
-<<<<<<< HEAD
     "express": "^5.2.1",
     "mongoose": "^9.3.0"
-=======
-    "dotenv": "^17.4.0",
-    "express": "^5.2.1",
-    "mongoose": "^9.4.1"
->>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
   }
 }

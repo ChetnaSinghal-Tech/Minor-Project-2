@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
-
->>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Donors | Donix</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/main.css">
-<<<<<<< HEAD
-</head>
-<body>
-   <nav class="navbar">
-        <div class="logo">🩸 Donix</div>
-        <ul class="nav-links">
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="search.html">Search Donor</a></li>
-=======
     <link rel="stylesheet" href="../assets/search.css">
 </head>
 
@@ -28,7 +15,6 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="search.html" class="active">Search Donor</a></li>
->>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
             <li><a href="login.html">SignIn</a></li>
             <li><a href="Register_Donor.html">Register Donor</a></li>
             <li><a href="about.html">About</a></li>
@@ -36,20 +22,12 @@
     </nav>
 
     <section class="search-page">
-<<<<<<< HEAD
-        <div class="search-sidebar">
-            <div class="glass-card filter-box">
-                <h3><i class="fa-solid fa-filter"></i> Filters</h3>
-                <label>Blood Group</label>
-                <select id="type-filter" class="glass-input">
-=======
         <aside class="search-sidebar">
             <div class="glass-card filter-box">
                 <h3><i class="fa-solid fa-filter"></i> Filters</h3>
 
                 <label for="blood-type-select">Blood Group</label>
                 <select id="blood-type-select" class="glass-input">
->>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
                     <option value="all">All Groups</option>
                     <option value="O-">O- (Universal)</option>
                     <option value="A+">A+</option>
@@ -59,81 +37,6 @@
                     <option value="A-">A-</option>
                     <option value="B-">B-</option>
                     <option value="AB-">AB-</option>
-<<<<<<< HEAD
-
-                    </select>
-                
-                <label>Max Distance (km)</label>
-                <input type="range" min="1" max="100" value="20" class="range-slider">
-                
-                <div class="toggle-container">
-                    <span>Available Now</span>
-                    <input type="checkbox" checked>
-                </div>
-            </div>
-        </div>
-
-        <div class="search-results">
-            <div class="results-header">
-                <h2>Donors in <span id="current-city">Your Area</span></h2>
-                <p>Showing 12 verified donors found nearby</p>
-            </div>
-
-            <div class="results-grid" id="donor-results">
-                <div class="glass-card donor-card">
-                    <div class="donor-type">O-</div>
-                    <div class="donor-info">
-                        <h4>Rahul Sharma</h4>
-                        <p><i class="fa-solid fa-location-dot"></i> South Delhi, 2.4km away</p>
-                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Donor</span>
-                    </div>
-                    <div class="donor-actions">
-                        <a href="tel:123" class="btn primary-small">Call Now</a>
-                    </div>
-                </div>
-                </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3 class="footer-logo">🩸 Donix</h3>
-            <p class="footer-desc">Connecting heroes with those in need. Our platform ensures that blood donation is fast, secure, and accessible to everyone.</p>
-            <div class="system-status">
-                <span class="status-dot"></span>
-                System Operational: 24/7 Support
-            </div>
-        </div>
-
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="search.html">Find Donors</a></li>
-                <li><a href="Register_Donor.html">Register</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Get in Touch</h4>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <p class="footer-contact">support@donix.com</p>
-            <p class="footer-contact">+1 (555) 000-LIFE</p>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>© 2026 Donix. Designed for Life. <span class="divider">|</span> <a href="#">Privacy Policy</a> <span class="divider">|</span> <a href="#">Terms of Service</a></p>
-    </div>
-</footer>
-</body>
-=======
                 </select>
 
                 <label for="cityFilter">City / Location</label>
@@ -216,6 +119,7 @@
                     <li><a href="search.html">Find Donors</a></li>
                     <li><a href="Register_Donor.html">Register</a></li>
                     <li><a href="about.html">About Us</a></li>
+                   
                 </ul>
             </div>
 
@@ -241,5 +145,4 @@
     <script type="module" src="../js/search.js"></script>
 </body>
 
->>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
 </html>
