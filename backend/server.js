@@ -6,7 +6,9 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 app.use(express.json());
 
 connectDB();
@@ -16,6 +18,10 @@ app.use("/api/auth", authRoutes);
 
 // If you want a test route in THIS file, use 'app', not 'router'
 app.get("/api/ping", (req, res) => res.send("Server is alive!"));
+
+app.get("/", (req, res) => {
+    res.send("🚀 Donix Backend is Live");
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(` Server running on port ${PORT}`));

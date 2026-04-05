@@ -1,7 +1,7 @@
 // js/api.js
 
 // 1. Centralized URL - Change this ONLY here when you deploy to Render/Vercel
-const BASE_URL = "http://localhost:3000/api/auth";
+const BASE_URL = "https://donix-api.onrender.com/api/auth";
 
 // 2. Helper function to handle response errors
 const handleResponse = async (res) => {
