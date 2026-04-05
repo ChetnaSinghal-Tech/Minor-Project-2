@@ -6,9 +6,12 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
+const cors = require('cors');
 app.use(cors({
-    origin: "*"
+    origin: 'https://donixprojexaai.netlify.app', // allow your frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
+app.use(cors()); // allow all origins
 app.use(express.json());
 
 connectDB();
