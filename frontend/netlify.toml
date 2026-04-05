@@ -1,8 +1,8 @@
-[build]
-  publish = "."
-  command = "echo 'Building frontend'"
+// [build]
+//   publish = "."
+//   command = "echo 'Building frontend'"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+// [[redirects]]
+//   from = "/*"
+//   to = "/index.html"
+//   status = 200
