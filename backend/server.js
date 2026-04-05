@@ -9,6 +9,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+
 connectDB();
 
 // This is the correct way to link your routes
