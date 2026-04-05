@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. DATA INITIALIZATION
@@ -187,3 +188,121 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 5000);
 }); 
+=======
+import { api } from './api.js';
+
+// --- 1. SECURITY & DATA LOADING ---
+document.addEventListener('DOMContentLoaded', async () => {
+    const userEmail = localStorage.getItem('userEmail');
+    const userRole = localStorage.getItem('userRole');
+    const donorId = localStorage.getItem('donorId');
+
+    // Security Gate
+    
+    if (!userEmail || !userRole) {
+        alert("Session expired. Please login again.");
+        window.location.href = "../public/login.html";
+        return;
+    }
+
+    if (userRole === 'admin' && !window.location.pathname.includes('../admin/admin.html')) {
+        console.log("Admin detected on User Dashboard");
+    }
+    else if (userRole === 'user' && !window.location.pathname.includes('../user/user.html')) {
+        console.log("User detected on user Dashboard");
+    }
+
+    try {
+        const userData = await api.getProfile(userEmail);
+
+        // Inject data into the UI
+        document.getElementById('currentViewName').textContent = userData.name;
+        document.getElementById('editName').value = userData.name;
+        document.getElementById('editEmail').value = userData.email;
+        document.getElementById('editBlood').value = userData.blood;
+
+        // Update Stats Cards
+        document.getElementById('statDonations').textContent = "0";
+
+        // --- 4. FETCH REAL-TIME REQUESTS (Moved inside DOMContentLoaded) ---
+        const requestsList = document.getElementById('requests-list'); // Matching your HTML ID
+
+        if (requestsList && donorId) {
+            const response = await fetch(`http://localhost:3000/api/auth/my-requests?donorId=${donorId}`);
+            const requests = await response.json();
+
+            if (requests.length === 0) {
+                requestsList.innerHTML = `
+                    <div class="empty-state">
+                        <p>No active blood requests at the moment. Keep being a hero!</p>
+                    </div>`;
+            } else {
+                requestsList.innerHTML = ""; // Clear loader
+                requests.forEach(req => {
+                    requestsList.innerHTML += `
+                        <div class="request-card">
+                            <div class="request-content">
+                                <h4>From: ${req.requesterName}</h4>
+                                <p><strong>Blood:</strong> ${req.bloodType}</p>
+                                <p><strong>Contact:</strong> ${req.requesterContact}</p>
+                                <p><strong>Message:</strong> "${req.message}"</p>
+                                <span class="status-tag status-${req.status}">${req.status}</span>
+                            </div>
+                            <div class="request-actions">
+                                <button onclick="updateStatus('${req._id}', 'accepted')" class="btn-accept">Accept</button>
+                                <button onclick="updateStatus('${req._id}', 'rejected')" class="btn-reject">Decline</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+    } catch (err) {
+        console.error("Dashboard error:", err);
+    }
+});
+
+// --- 2. TAB SWITCHING LOGIC ---
+const menuItems = document.querySelectorAll('#sidebarMenu li');
+const sections = document.querySelectorAll('.dashboard-view');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const targetSection = item.getAttribute('data-section');
+
+        menuItems.forEach(i => i.classList.remove('active-tab'));
+        item.classList.add('active-tab');
+
+        sections.forEach(section => {
+            section.style.display = section.id === `section-${targetSection}` ? 'block' : 'none';
+        });
+    });
+});
+
+// --- 3. LOGOUT LOGIC ---
+document.getElementById('logoutLink')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    alert("Logged out safely.");
+    window.location.href = "../public/index.html";
+});
+
+// --- 5. UPDATE REQUEST STATUS (Must stay outside for window scope) ---
+window.updateStatus = async (requestId, newStatus) => {
+    try {
+        const response = await fetch(`http://localhost:3000/api/auth/update-request-status`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ requestId, status: newStatus })
+        });
+
+        if (response.ok) {
+            alert(`Request marked as ${newStatus}!`);
+            location.reload(); 
+        }
+    } catch (err) {
+        alert("Failed to update status.");
+    }
+};
+>>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)

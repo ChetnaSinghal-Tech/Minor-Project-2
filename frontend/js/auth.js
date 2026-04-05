@@ -1,15 +1,32 @@
+<<<<<<< HEAD
 // --- 1. SECURITY CHECK ---
 if (window.location.pathname.includes('/admin/')) {
     const isLoggedIn = localStorage.getItem('isAdminLoggedIn');
     if (!isLoggedIn) {
         alert("Access Denied. Please login first.");
         // FIX: Use the full path that worked for you
+=======
+import { api } from './api.js';
+
+// --- 1. SECURITY CHECK ---
+if (window.location.pathname.includes('../admin/admin.html')) {
+    const isLoggedIn = localStorage.getItem('isAdminLoggedIn');
+    if (!isLoggedIn) {
+        alert("Access Denied. Please login first.");
+>>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
         window.location.href = "../public/login.html";
     }
 }
 
+<<<<<<< HEAD
 // --- 2. LOGIN LOGIC ---
 // --- LOGIN LOGIC ---
+=======
+
+
+
+// --- 2. LOGIN LOGIC ---
+>>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
 const loginForm = document.getElementById('unifiedLoginForm');
 
 if (loginForm) {
@@ -20,6 +37,7 @@ if (loginForm) {
         const password = document.getElementById('password').value;
 
         try {
+<<<<<<< HEAD
             const response = await fetch("http://localhost:3000/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -49,11 +67,32 @@ if (loginForm) {
 
         } catch (error) {
             alert("Error: Server not running!");
+=======
+            // ✅ USE THE API OBJECT INSTEAD OF FETCH
+            const data = await api.login(email, password);
+
+            // ✅ Save role & session
+            localStorage.setItem('donorId', data.user.id);
+            localStorage.setItem('userRole', data.role);
+            localStorage.setItem('userEmail', email); // Useful for profile page later
+
+            if (data.role === "admin") {
+                localStorage.setItem('isAdminLoggedIn', "true");
+            }
+
+            alert(data.message);
+            window.location.href = data.redirect;
+
+        } catch (error) {
+            // The catch block now handles the "Error: Something went wrong" from api.js
+            alert(error.message || "Server not running!");
+>>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
         }
     });
 }
 
 // --- 3. LOGOUT LOGIC ---
+<<<<<<< HEAD
 function handleLogout() {
     // Clear the session
     localStorage.removeItem('isAdminLoggedIn');
@@ -87,4 +126,28 @@ row.remove();
 
 });
 
+=======
+const handleLogout = () => {
+    console.log("Logout triggered..."); // Debugging line
+    
+    // 1. Clear all session data
+    localStorage.removeItem('isAdminLoggedIn');
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('userEmail');
+    
+    alert("Logged out successfully.");
+
+    // 2. Fix the Path
+    // If you are in /admin/admin.html, you need to go UP one level to find /public/
+    window.location.href = "../public/index.html"; 
+};
+
+// 4. Global Listener (The Reliable Way)
+document.addEventListener('click', (e) => {
+    // Look for any element with the class 'logout-btn'
+    if (e.target.closest('.logout-btn')) {
+        e.preventDefault();
+        handleLogout();
+    }
+>>>>>>> f7f0236 ( Filtered donors on the basis of city and blood group also added the request functionality. Also fixed the schema and request section on user dashboard.)
 });
