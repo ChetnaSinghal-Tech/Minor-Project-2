@@ -1,7 +1,6 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/main.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -38,15 +38,20 @@
         </div>
 
         <div class="glass-card form-box">
+            
             <form id="regForm">
                 <div class="input-row">
                     <input type="text" id="name" placeholder="Full Name" class="glass-input" required>
                     <select id="blood" class="glass-input" required>
                         <option value="">Blood Group</option>
-                        <option value="A+">A+</option><option value="A-">A-</option>
-                        <option value="B+">B+</option><option value="B-">B-</option>
-                        <option value="O+">O+</option><option value="O-">O-</option>
-                        <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>  
                     </select>
                 </div>
 
@@ -59,21 +64,22 @@
                     </div>
                     <div class="input-group">
                         <label for="confirmPassword">Confirm Password</label>
-                        <input type="password" id="confirmPassword" required placeholder="Repeat password" class="glass-input">
+                        <input type="password" id="confirmPassword" required placeholder="Repeat password"
+                            class="glass-input">
                     </div>
                 </div>
 
                 <div class="input-group">
                     <label for="phone">Mobile Number</label>
                     <div style="display: flex; gap: 5px;">
-                        <span style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: #fff;">+91</span>
+                        <span
+                            style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: #fff;">+91</span>
                         <input type="tel" id="phone" placeholder="9876543210" class="glass-input"
-                               pattern="[6789][0-9]{9}" 
-                               title="Please enter a valid 10-digit mobile number"
-                               maxlength="10" required style="flex: 1;">
+                            pattern="[6789][0-9]{9}" title="Please enter a valid 10-digit mobile number" maxlength="10"
+                            required style="flex: 1;">
                     </div>
                 </div>
-
+                    
                 <input type="text" id="city" placeholder="Your City / Location" class="glass-input" required>
 
                 <div class="legal-text">
@@ -86,6 +92,16 @@
         </div>
     </section>
 
-    <script type="module" src="../js/register.js"></script>
+    <!-- aichatbot -->
+    <!-- <div class="glass-card">
+        <h3>Smart Registration</h3>
+        <p>Upload your blood report to auto-fill your profile!</p>
+        <input type="file" id="reportUpload" accept="image/*">
+        <button onclick="handleAutoFill()">Auto-Fill My Details</button>
+    </div> -->
+
+    <script type="module" src="../js/register.js"></script> 
 </body>
+
+
 </html>
