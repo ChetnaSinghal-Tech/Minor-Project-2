@@ -10,9 +10,11 @@ router.get("/user-profile/:email", authController.getProfile);
 router.get("/search", authController.searchDonors);
 router.get("/ping", (req, res) => res.send("Router is connected!"));
 router.get("/my-requests", authController.getMyRequests);
+
 // Add this to your existing routes
 router.patch("/update-request-status", authController.updateRequestStatus);
 
-
+router.get("/all-donors", authController.getAllDonors);
+router.get("/all-requests", authController.getAllRequests);
 
 module.exports = router;

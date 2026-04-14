@@ -44,21 +44,21 @@
           <div class="glass-card stat-card red-border">
             <i class="fa-solid fa-droplet"></i>
             <div>
-              <h3>1,204</h3>
+             <h3 id="totalRequests">0</h3>
               <p>Total Units Collected</p>
             </div>
           </div>
           <div class="glass-card stat-card">
             <i class="fa-solid fa-user-plus"></i>
             <div>
-              <h3>42</h3>
+              <h3 id="totalDonors">0</h3>
               <p>New Donors Today</p>
             </div>
           </div>
           <div class="glass-card stat-card">
             <i class="fa-solid fa-clock"></i>
             <div>
-              <h3>8</h3>
+              <h3 id="pendingCount">0</h3>
               <p>Pending Emergencies</p>
             </div>
           </div>
@@ -76,7 +76,7 @@
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="requestTable">
               <tr>
                 <td>Amitabh B.</td>
                 <td><span class="badge">O-</span></td>
@@ -97,9 +97,8 @@
       </main>
     </div>
 
- <script type = "module" src="../js/auth.js">
-
-
-</script>
+  <script type = "module" src="../js/auth.js"></script>
+  <script type = "module" src="../js/admin.js"></script>
   </body>
+  
 </html>

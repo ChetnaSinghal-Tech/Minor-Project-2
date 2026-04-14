@@ -183,3 +183,29 @@ exports.updateRequestStatus = async (req, res) => {
         res.status(500).json({ message: "Server error updating status" });
     }
 };
+
+// 🔥 ADMIN: GET ALL DONORS
+exports.getAllDonors = async (req, res) => {
+    try {
+        const donors = await Donor.find().select("-password");
+        res.status(200).json(donors);
+    } catch (err) {
+        console.error("Error fetching donors:", err);
+        res.status(500).json({ message: "Error fetching donors" });
+    }
+};
+
+// 🔥 ADMIN: GET ALL REQUESTS
+exports.getAllRequests = async (req, res) => {
+    try {
+        const requests = await Request.find()
+            .populate("donorId", "name")
+            .populate("senderId", "name") // 🔥 important
+            .sort({ createdAt: -1 });
+
+        res.status(200).json(requests);
+    } catch (err) {
+        console.error("Error fetching requests:", err);
+        res.status(500).json({ message: "Error fetching requests" });
+    }
+};
