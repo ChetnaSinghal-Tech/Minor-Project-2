@@ -88,6 +88,12 @@ document.querySelectorAll('#sidebarMenu li').forEach(item => {
         document.querySelectorAll('.dashboard-view').forEach(section => {
             section.style.display = section.id === `section-${targetSection}` ? 'block' : 'none';
         });
+
+        // adding this new
+        if (targetSection === "sent-requests") {
+            loadSentRequests();
+        }
+        
         showToast(`Viewing ${item.innerText}`);
     });
 });
@@ -119,6 +125,58 @@ window.updateStatus = async (requestId, newStatus) => {
         showToast("❌ Failed to update status.");
     }
 };
+
+// function for sent requests 
+
+async function loadSentRequests() {
+    const donorId = localStorage.getItem("donorId");
+
+    const container = document.getElementById("sent-requests-list");
+    if (!container || !donorId) return;
+
+    try {
+        const res = await fetch(`${BASE_URL}/my-requests?senderId=${donorId}`);
+        const requests = await res.json();
+
+        if (requests.length === 0) {
+            container.innerHTML = `<div class="empty-state"><p>No requests sent yet 🚀</p></div>`;
+            return;
+        }
+
+        container.innerHTML = requests.map(req => {
+            let statusClass = `status-${req.status}`;
+            let statusText = req.status;
+
+            if (req.status === "pending") statusText = "🟡 Pending";
+            if (req.status === "accepted") statusText = "🟢 Accepted";
+            if (req.status === "rejected") statusText = "🔴 Rejected";
+
+            return `
+                <div class="request-card">
+                    <div class="request-content">
+                        <h4>To Donor</h4>
+                        <p><strong>Blood:</strong> ${req.bloodType}</p>
+                        <span class="status-tag ${statusClass}">${statusText}</span>
+                    </div>
+                </div>
+            `;
+        }).join("");
+
+    } catch (err) {
+        console.error("Error loading sent requests", err);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // import { api } from './api.js';
 
