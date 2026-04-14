@@ -6,7 +6,7 @@ const Request = require("../models/Request");
 exports.register = async (req, res) => {
     try {
         const { password, email } = req.body;
-        
+
         // Check if user exists
         const existingUser = await Donor.findOne({ email });
         if (existingUser) return res.status(400).send("Email already registered.");
@@ -75,12 +75,12 @@ exports.getProfile = async (req, res) => {
         const { name, blood, email, phone, city, role } = user;
 
         // Send the data back
-        res.json({ 
-            name, 
-            blood, 
-            email, 
-            phone, 
-            city, 
+        res.json({
+            name,
+            blood,
+            email,
+            phone,
+            city,
             role,
             donations: 0, // Placeholder until you build the donation system
             livesSaved: 0  // Placeholder
@@ -142,10 +142,13 @@ exports.sendBloodRequest = async (req, res) => {
 exports.getMyRequests = async (req, res) => {
     try {
 
-        const { senderId } = req.query; 
+        const { senderId } = req.query;
 
-        const myRequests = await Request.find({ senderId }).sort({ createdAt: -1 });
-        
+        // const myRequests = await Request.find({ senderId }).sort({ createdAt: -1 });
+        const myRequests = await Request.find({ senderId })
+            .populate("donorId", "name") // 🔥 ADD THIS
+            .sort({ createdAt: -1 });
+
         // const { donorId } = req.query; 
 
         // const myRequests = await Request.find({ donorId }).sort({ createdAt: -1 });
@@ -171,9 +174,9 @@ exports.updateRequestStatus = async (req, res) => {
             return res.status(404).json({ message: "Request not found" });
         }
 
-        res.status(200).json({ 
-            message: `Request ${status} successfully!`, 
-            request: updatedRequest 
+        res.status(200).json({
+            message: `Request ${status} successfully!`,
+            request: updatedRequest
         });
     } catch (err) {
         console.error("Update Status Error:", err);
