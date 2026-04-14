@@ -88,7 +88,8 @@ function syncNavbar() {
     const guestSection = document.getElementById('nav-guest');
     const userSection = document.getElementById('nav-user');
 
-    if (role) {
+    // ✅ STRICT CHECK
+    if (role === "user" || role === "admin") {
         if (guestSection) guestSection.style.display = 'none';
         if (userSection) userSection.style.display = 'flex';
     } else {
@@ -96,9 +97,6 @@ function syncNavbar() {
         if (userSection) userSection.style.display = 'none';
     }
 }
-
-// Call this every time a page loads
-document.addEventListener('DOMContentLoaded', syncNavbar);
 
 
 
