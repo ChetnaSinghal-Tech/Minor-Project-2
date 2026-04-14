@@ -83,36 +83,20 @@ document.addEventListener('click', (e) => {
 });
 
 // --- NAVBAR SYNC LOGIC ---
-// function syncNavbar() {
-//     const role = localStorage.getItem('userRole');
-//     const guestSection = document.getElementById('nav-guest');
-//     const userSection = document.getElementById('nav-user');
-
-//     if (role) {
-//         if (guestSection) guestSection.style.display = 'none';
-//         if (userSection) userSection.style.display = 'flex';
-//     } else {
-//         if (guestSection) guestSection.style.display = 'flex';
-//         if (userSection) userSection.style.display = 'none';
-//     }
-// }
 function syncNavbar() {
     const role = localStorage.getItem('userRole');
-
     const guestSection = document.getElementById('nav-guest');
     const userSection = document.getElementById('nav-user');
 
-    // ✅ strict check only
-    const isLoggedIn = role === "user" || role === "admin";
-
-    if (isLoggedIn) {
-        guestSection.style.display = "none";
-        userSection.style.display = "flex";
+    if (role) {
+        if (guestSection) guestSection.style.display = 'none';
+        if (userSection) userSection.style.display = 'flex';
     } else {
-        guestSection.style.display = "flex";
-        userSection.style.display = "none";
+        if (guestSection) guestSection.style.display = 'flex';
+        if (userSection) userSection.style.display = 'none';
     }
 }
+
 // Call this every time a page loads
 document.addEventListener('DOMContentLoaded', syncNavbar);
 
