@@ -46,9 +46,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <p><i class="fa-solid fa-location-dot"></i> ${donor.city}</p>
                         <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Donor</span>
                     </div>
+                    
                     <div class="donor-actions">
-                        <a href="tel:${donor.phone}" class="btn primary-small">Call Now</a>
-                        <button class="btn secondary-small" onclick="openRequestModal('${donor._id}', '${donor.name}')" style="background: #444; color: white; margin-left: 5px;">
+                        <button class="btn primary-small" onclick="handleCall('${donor.phone}')">
+                            Call Now
+                        </button>
+                        <button class="btn secondary-small" onclick="handleRequest('${donor._id}', '${donor.name}')">
                             Request
                         </button>
                     </div>
@@ -142,6 +145,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     //     });
     // });
 });
+
+// ===== AUTH CHECK FUNCTIONS =====
+
+function isLoggedIn() {
+    return !!localStorage.getItem("donorId");
+}
+
+function requireLogin() {
+    alert("Please login first to continue");
+    window.location.href = "/public/login.html";
+}
+
+// ===== BUTTON HANDLERS =====
+
+function handleCall(phone) {
+    if (!isLoggedIn()) {
+        requireLogin();
+        return;
+    }
+
+    window.location.href = `tel:${phone}`;
+}
+
+function handleRequest(donorId, donorName) {
+    if (!isLoggedIn()) {
+        requireLogin();
+        return;
+    }
+
+    window.openRequestModal(donorId, donorName);
+}
 
 // import { api } from './api.js';
 
