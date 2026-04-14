@@ -82,7 +82,23 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// --- NAVBAR SYNC LOGIC ---
+function syncNavbar() {
+    const role = localStorage.getItem('userRole');
+    const guestSection = document.getElementById('nav-guest');
+    const userSection = document.getElementById('nav-user');
 
+    if (role) {
+        if (guestSection) guestSection.style.display = 'none';
+        if (userSection) userSection.style.display = 'flex';
+    } else {
+        if (guestSection) guestSection.style.display = 'flex';
+        if (userSection) userSection.style.display = 'none';
+    }
+}
+
+// Call this every time a page loads
+document.addEventListener('DOMContentLoaded', syncNavbar);
 
 
 

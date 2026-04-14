@@ -12,7 +12,30 @@
 
 <body>
 
+
     <nav class="navbar">
+        <div class="logo">🩸 Donix</div>
+
+        <ul class="nav-links">
+            <li><a href="/frontend/index.html">Home</a></li>
+            <li><a href="../public/search.html">Search Donor</a></li>
+            <li><a href="../public/about.html">About</a></li>
+
+            <div id="nav-guest" class="nav-group">
+                
+                <li><a href="../public/login.html">SignIn</a></li>
+
+                <li><a href="../public/Register_Donor.html" class="btn-register">Register</a></li>
+            </div>
+
+            <div id="nav-user" class="nav-group" style="display: none;">
+                <li><a href="user.html" class="active-dash">Dashboard</a></li>
+                <li><a href="#" class="logout-trigger">Logout</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- <nav class="navbar">
         <div class="logo">🩸 Donix</div>
         <ul class="nav-links">
             <li><a href="../public/index.html">Home</a></li>
@@ -21,7 +44,27 @@
             <li><a href="../public/about.html">About</a></li>
             <li><a href="../public/login.html" id="logoutLink">Logout</a></li>
         </ul>
-    </nav> 
+    </nav>  -->
+
+    <!-- <nav class="navbar">
+        <div class="logo">🩸 Donix</div>
+        <nav class="navbar">
+        <div class="logo">🩸 Donix</div>
+        <ul class="nav-links">
+            <li><a href="/frontend/index.html">Home</a></li>
+            <li><a href="public/search.html">Search Donor</a></li>
+            
+
+            <li class="guest-only"><a href="public/login.html">Sign-in</a></li>
+            <li class="guest-only"><a href="public/Register_Donor.html">Register</a></li>
+
+            <li class="auth-only"><a href="user.html">Dashboard</a></li>
+            <li class="auth-only"><a href="#" id="logoutBtn">Logout</a></li>
+
+            <li><a href="public/about.html">About</a></li>
+        </ul>
+    </nav> -->
+
 
     <div class="admin-dashboard">
         <aside class="search-sidebar">
@@ -174,7 +217,51 @@
         style="display:none; position:fixed; bottom:20px; right:20px; background:var(--primary-red); color:white; padding:15px 25px; border-radius:10px; z-index:9999;">
     </div>
 
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-logo">🩸 Donix</h3>
+                <p class="footer-desc">Connecting heroes with those in need. Our platform ensures that blood donation is
+                    fast, secure, and accessible to everyone.</p>
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    System Operational: 24/7 Support
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Find Donors</a></li>
+                    <li><a href="Register_Donor.html">Register</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                   
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="footer-contact">support@donix.com</p>
+                <p class="footer-contact">+1 (555) 000-LIFE</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Donix. Designed for Life. <span class="divider">|</span> <a href="#">Privacy Policy</a> <span
+                    class="divider">|</span> <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
     <script type="module" src="../js/dashboard.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+
 </body>
 
-</html> 
+</html>

@@ -63,6 +63,25 @@ body {
     color: var(--primary-red);
 }
 
+/* added for dynamic navbar */
+.nav-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.active-dash {
+    color: #ff4d4d; /* Highlighting the dashboard for the user */
+    font-weight: bold;
+}
+
+/* Hide utility class */
+.hidden {
+    display: none !important;
+}
+
+
+
 /* ========== HERO SECTION ========== */
 .hero {
     min-height: 90vh;
@@ -181,6 +200,8 @@ body {
     transform: translateY(-3px);
     filter: brightness(1.2);
 }
+
+
 
 /* ========== FEATURE SLIDER ========== */
 .features-carousel {

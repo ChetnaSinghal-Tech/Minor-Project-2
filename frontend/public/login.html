@@ -9,7 +9,29 @@
 </head>
 <body>
 
+
     <nav class="navbar">
+        <div class="logo">🩸 Donix</div>
+
+        <ul class="nav-links">
+            <li><a href="/frontend/index.html">Home</a></li>
+            <li><a href="../public/search.html">Search Donor</a></li>
+            <li><a href="../public/about.html">About</a></li>
+
+            <div id="nav-guest" class="nav-group">
+                
+                <li><a href="../public/login.html">SignIn</a></li>
+
+                <li><a href="../public/Register_Donor.html" class="btn-register">Register</a></li>
+            </div>
+
+            <div id="nav-user" class="nav-group" style="display: none;">
+                <li><a href="../user/user.html" class="active-dash">Dashboard</a></li>
+                <li><a href="#" class="logout-trigger">Logout</a></li>
+            </div>
+        </ul>
+    </nav>
+    <!-- <nav class="navbar">
         <div class="logo">🩸 Donix</div>
         <ul class="nav-links">
             <li><a href="../index.html">Home</a></li>
@@ -18,7 +40,24 @@
             <li><a href="Register_Donor.html">Register Donor</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
-    </nav>
+    </nav> -->
+
+    <!-- <nav class="navbar">
+        <div class="logo">🩸 Donix</div>
+        <ul class="nav-links">
+            <li><a href="/frontend/index.html">Home</a></li>
+            <li><a href="search.html">Search Donor</a></li>
+            
+
+            <li class="guest-only"><a href="login.html">Sign-in</a></li>
+            <li class="guest-only"><a href="Register_Donor.html">Register</a></li>
+
+            <li class="auth-only"><a href="user/user.html">Dashboard</a></li>
+            <li class="auth-only"><a href="#" id="logoutBtn">Logout</a></li>
+
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav> -->
 
     <div class="centered-layout">
         <div class="glass-card login-box">
@@ -82,5 +121,7 @@
     </footer>
     
     <script type="module" src="../js/auth.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    
 </body>
 </html>
