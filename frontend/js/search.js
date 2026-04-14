@@ -148,34 +148,34 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // ===== AUTH CHECK FUNCTIONS =====
 
-function isLoggedIn() {
+window.isLoggedIn = function () {
     return !!localStorage.getItem("donorId");
-}
+};
 
-function requireLogin() {
+window.requireLogin = function () {
     alert("Please login first to continue");
     window.location.href = "/public/login.html";
-}
+};
 
 // ===== BUTTON HANDLERS =====
 
-function handleCall(phone) {
-    if (!isLoggedIn()) {
-        requireLogin();
+window.handleCall = function (phone) {
+    if (!window.isLoggedIn()) {
+        window.requireLogin();
         return;
     }
 
     window.location.href = `tel:${phone}`;
-}
+};
 
-function handleRequest(donorId, donorName) {
-    if (!isLoggedIn()) {
-        requireLogin();
+window.handleRequest = function (donorId, donorName) {
+    if (!window.isLoggedIn()) {
+        window.requireLogin();
         return;
     }
 
     window.openRequestModal(donorId, donorName);
-}
+};
 
 // import { api } from './api.js';
 
