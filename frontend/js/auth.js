@@ -97,23 +97,20 @@ document.addEventListener('click', (e) => {
 //     }
 // }
 function syncNavbar() {
-    let role = localStorage.getItem('userRole');
-
-    // ✅ Clean bad values automatically
-    if (!role || role === "undefined" || role === "null") {
-        localStorage.removeItem("userRole");
-        role = null;
-    }
+    const role = localStorage.getItem('userRole');
 
     const guestSection = document.getElementById('nav-guest');
     const userSection = document.getElementById('nav-user');
 
-    if (role === "user" || role === "admin") {
-        if (guestSection) guestSection.style.display = 'none';
-        if (userSection) userSection.style.display = 'flex';
+    // ✅ strict check only
+    const isLoggedIn = role === "user" || role === "admin";
+
+    if (isLoggedIn) {
+        guestSection.style.display = "none";
+        userSection.style.display = "flex";
     } else {
-        if (guestSection) guestSection.style.display = 'flex';
-        if (userSection) userSection.style.display = 'none';
+        guestSection.style.display = "flex";
+        userSection.style.display = "none";
     }
 }
 // Call this every time a page loads
