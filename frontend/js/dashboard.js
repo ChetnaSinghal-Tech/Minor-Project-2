@@ -93,7 +93,7 @@ document.querySelectorAll('#sidebarMenu li').forEach(item => {
         if (targetSection === "sent-requests") {
             loadSentRequests();
         }
-        
+
         showToast(`Viewing ${item.innerText}`);
     });
 });
@@ -154,7 +154,7 @@ async function loadSentRequests() {
             return `
                 <div class="request-card">
                     <div class="request-content">
-                        <h4>To Donor</h4>
+                        <h4>To: ${req.donorName || "Donor"}</h4>
                         <p><strong>Blood:</strong> ${req.bloodType}</p>
                         <span class="status-tag ${statusClass}">${statusText}</span>
                     </div>
