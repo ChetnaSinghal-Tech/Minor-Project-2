@@ -61,15 +61,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    // --- 2. AUTO-FILTER FROM HOME PAGE ---
+    // --- AUTO-FILTER FROM HOME PAGE ---
     const urlParams = new URLSearchParams(window.location.search);
-    const typeFromUrl = urlParams.get('type');
+    const typeFromUrl = urlParams.get('blood'); // ✅ FIXED
 
     if (typeFromUrl && bloodDropdown) {
         bloodDropdown.value = typeFromUrl;
         performSearch(typeFromUrl, "");
     }
-
     // --- 3. MANUAL SEARCH ---
     if (searchBtn) {
         searchBtn.addEventListener('click', () => {
@@ -128,12 +127,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     // --- 6. HOME PAGE REDIRECTS ---
+
+
     document.querySelectorAll('.tag').forEach(tag => {
         tag.addEventListener('click', () => {
             const selectedType = tag.getAttribute('data-type');
-            window.location.href = `search.html?type=${encodeURIComponent(selectedType)}`;
+            window.location.href = `public/search.html?blood=${encodeURIComponent(selectedType)}`;
         });
     });
+    // document.querySelectorAll('.tag').forEach(tag => {
+    //     tag.addEventListener('click', () => {
+    //         const selectedType = tag.getAttribute('data-type');
+    //         window.location.href = `search.html?type=${encodeURIComponent(selectedType)}`;
+    //     });
+    // });
 });
 
 // import { api } from './api.js';
