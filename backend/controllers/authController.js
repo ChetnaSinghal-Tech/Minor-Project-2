@@ -117,18 +117,22 @@ exports.searchDonors = async (req, res) => {
 // database alerts and notifications logic
 exports.sendBloodRequest = async (req, res) => {
     try {
-        const { donorId, requesterName, requesterContact, bloodType, message } = req.body;
+        const { donorId, senderId, requesterName, requesterContact, bloodType, message } = req.body;
 
         const newRequest = new Request({
             donorId,
+            senderId, // ✅ now defined properly
             requesterName,
             requesterContact,
             bloodType,
-            message
+            message,
+            status: "pending" // 🔥 always set
         });
 
         await newRequest.save();
+
         res.status(201).json({ message: "Request sent successfully! The hero will be notified." });
+
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Failed to send request." });
@@ -137,10 +141,14 @@ exports.sendBloodRequest = async (req, res) => {
 
 exports.getMyRequests = async (req, res) => {
     try {
-        
-        const { donorId } = req.query; 
 
-        const myRequests = await Request.find({ donorId }).sort({ createdAt: -1 });
+        const { senderId } = req.query; 
+
+        const myRequests = await Request.find({ senderId }).sort({ createdAt: -1 });
+        
+        // const { donorId } = req.query; 
+
+        // const myRequests = await Request.find({ donorId }).sort({ createdAt: -1 });
         res.status(200).json(myRequests);
     } catch (err) {
         res.status(500).json({ message: "Error fetching requests" });

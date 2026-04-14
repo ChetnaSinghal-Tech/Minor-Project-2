@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             e.preventDefault();
             const payload = {
                 donorId: document.getElementById('modalDonorId').value,
+                senderId: localStorage.getItem("donorId"), //  NEW: Track who is sending the request
                 requesterName: document.getElementById('reqName').value,
                 requesterContact: document.getElementById('reqPhone').value,
                 message: document.getElementById('reqMessage').value,
