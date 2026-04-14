@@ -41,7 +41,8 @@ const app = express();
 // Use CORS only once with your specific configuration
 app.use(cors({
     origin: 'https://donixprojexaai.netlify.app', 
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ["Content-Type"]
 }));
 
 app.use(express.json());
