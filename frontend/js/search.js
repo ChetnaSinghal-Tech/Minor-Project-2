@@ -146,6 +146,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // });
 });
 
+// js fuctions for forced login on call now and request buttons
+
 // ===== AUTH CHECK FUNCTIONS =====
 
 window.isLoggedIn = function () {
