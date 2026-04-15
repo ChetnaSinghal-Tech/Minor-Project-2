@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/main.css">
 </head>
+
 <body>
 
 
@@ -19,7 +21,7 @@
             <li><a href="../public/about.html">About</a></li>
 
             <div id="nav-guest" class="nav-group">
-                
+
                 <li><a href="../public/login.html">SignIn</a></li>
 
                 <li><a href="../public/Register_Donor.html" class="btn-register">Register</a></li>
@@ -31,7 +33,7 @@
             </div>
         </ul>
     </nav>
-   <!-- <nav class="navbar">
+    <!-- <nav class="navbar">
         <div class="logo">🩸 Donix</div>
         <ul class="nav-links">
             <li><a href="../index.html" >Home</a></li>
@@ -62,7 +64,7 @@
     <section class="about-hero">
         <span class="status-text" style="text-transform: uppercase; letter-spacing: 2px;">Our Mission</span>
         <h1>Saving Lives Through <br><span>Education & Action.</span></h1>
-        
+
         <div class="mission-grid">
             <div class="mission-card">
                 <i class="fa-solid fa-bolt"></i>
@@ -91,7 +93,8 @@
                 <div class="glass-card edu-card">
                     <div class="edu-icon"><i class="fa-solid fa-droplet"></i></div>
                     <h3>Whole Blood</h3>
-                    <p>The most common type. One donation can save up to <strong>three lives</strong>. Used for surgeries, trauma, and anemia.</p>
+                    <p>The most common type. One donation can save up to <strong>three lives</strong>. Used for
+                        surgeries, trauma, and anemia.</p>
                     <ul class="edu-list">
                         <li><strong>Duration:</strong> 10-15 mins</li>
                         <li><strong>Frequency:</strong> Every 90 days</li>
@@ -101,7 +104,8 @@
                 <div class="glass-card edu-card">
                     <div class="edu-icon"><i class="fa-solid fa-bone"></i></div>
                     <h3>Bone Marrow</h3>
-                    <p>Crucial for patients with leukemia or lymphoma. It replaces unhealthy blood-forming cells with healthy ones.</p>
+                    <p>Crucial for patients with leukemia or lymphoma. It replaces unhealthy blood-forming cells with
+                        healthy ones.</p>
                     <ul class="edu-list">
                         <li><strong>Need:</strong> Genetic match required</li>
                         <li><strong>Impact:</strong> Cures blood cancers</li>
@@ -111,7 +115,8 @@
                 <div class="glass-card edu-card">
                     <div class="edu-icon"><i class="fa-solid fa-dna"></i></div>
                     <h3>PBSC (Stem Cells)</h3>
-                    <p>Peripheral Blood Stem Cell donation is a non-surgical process similar to donating plasma. Used for bone marrow transplants.</p>
+                    <p>Peripheral Blood Stem Cell donation is a non-surgical process similar to donating plasma. Used
+                        for bone marrow transplants.</p>
                     <ul class="edu-list">
                         <li><strong>Process:</strong> Apheresis (Blood filtering)</li>
                         <li><strong>Recovery:</strong> Usually within 24 hours</li>
@@ -120,53 +125,126 @@
             </div>
         </div>
 
+        <div id="stemModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <h2>🧬 Stem Cell Eligibility Screening</h2>
+
+    <form id="stemForm">
+
+      <!-- Medical Screening Section -->
+      <p><b>Medical Eligibility Check</b></p>
+
+      <label>Have you ever had cancer?</label>
+      <select required>
+        <option value="">Select</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+
+      <label>Any chronic blood disorders?</label>
+      <select required>
+        <option value="">Select</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+
+      <label>Are you currently under long-term medication?</label>
+      <select required>
+        <option value="">Select</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+
+      <label>Your weight is above 50 kg?</label>
+      <select required>
+        <option value="">Select</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label>Any infectious disease history?</label>
+      <select required>
+        <option value="">Select</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+
+      <br><br>
+
+      <label>
+        <input type="checkbox" required>
+        I confirm that all information is true and I agree to be contacted for stem cell donation
+      </label>
+
+      <button type="submit">Submit Screening</button>
+
+    </form>
+
+  </div>
+</div>
+
         <div class="about-content">
             <div class="stat-row">
-                <div class="stat-item"><h3>450+</h3><p>Hospitals Linked</p></div>
-                <div class="stat-item"><h3>10k+</h3><p>Safe Donations</p></div>
+                <div class="stat-item">
+                    <h3>450+</h3>
+                    <p>Hospitals Linked</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10k+</h3>
+                    <p>Safe Donations</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <h3 class="footer-logo">🩸 Donix</h3>
-            <p class="footer-desc">Connecting heroes with those in need. Our platform ensures that blood donation is fast, secure, and accessible to everyone.</p>
-            <div class="system-status">
-                <span class="status-dot"></span>
-                System Operational: 24/7 Support
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-logo">🩸 Donix</h3>
+                <p class="footer-desc">Connecting heroes with those in need. Our platform ensures that blood donation is
+                    fast, secure, and accessible to everyone.</p>
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    System Operational: 24/7 Support
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html">Find Donors</a></li>
+                    <li><a href="Register_Donor.html">Register</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="footer-contact">support@donix.com</p>
+                <p class="footer-contact">+1 (555) 000-LIFE</p>
             </div>
         </div>
 
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="search.html">Find Donors</a></li>
-                <li><a href="Register_Donor.html">Register</a></li>
-                <li><a href="about.html">About Us</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>© 2026 Donix. Designed for Life. <span class="divider">|</span> <a href="#">Privacy Policy</a> <span
+                    class="divider">|</span> <a href="#">Terms of Service</a></p>
         </div>
-
-        <div class="footer-col">
-            <h4>Get in Touch</h4>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <p class="footer-contact">support@donix.com</p>
-            <p class="footer-contact">+1 (555) 000-LIFE</p>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <p>© 2026 Donix. Designed for Life. <span class="divider">|</span> <a href="#">Privacy Policy</a> <span class="divider">|</span> <a href="#">Terms of Service</a></p>
-    </div>
-</footer>
+    </footer>
     <script type="module" src="../js/auth.js"></script>
-    
+
 </body>
+
 </html>

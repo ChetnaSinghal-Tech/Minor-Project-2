@@ -179,7 +179,110 @@ window.handleRequest = function (donorId, donorName) {
 
     window.openRequestModal(donorId, donorName);
 };
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("stemModal");
+    const openBtn = document.getElementById("openStemModal");
+    const closeBtn = document.querySelector(".close");
 
+    // Open modal
+    if (openBtn) {
+        openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.classList.add("active");
+        });
+    }
+
+    // Close modal
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+    }
+
+    // Close outside click
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("active");
+        }
+    });
+
+    // ESC close
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modal.classList.remove("active");
+        }
+    });
+
+    // FORM LOGIC
+    const form = document.getElementById("stemForm");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const cancer = document.getElementById("cancer").value;
+        const blood = document.getElementById("blood").value;
+        const medication = document.getElementById("medication").value;
+        const weight = document.getElementById("weight").value;
+        const infection = document.getElementById("infection").value;
+
+        const isEligible =
+            cancer === "no" &&
+            blood === "no" &&
+            medication === "no" &&
+            weight === "yes" &&
+            infection === "no";
+
+        if (isEligible) {
+            alert("🎉 Registration successful! We will contact you soon.");
+
+            modal.classList.remove("active");
+            form.reset();
+        } else {
+            alert("❌ Sorry, you're not eligible for stem cell donation.");
+        }
+    });
+});
+
+
+const counters = document.querySelectorAll('.counter');
+const speed = 100; // The lower the slower
+
+const startCounters = () => {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target'); // Get the target number
+            const suffix = counter.getAttribute('data-suffix') || '+'; // Get '+' or 'k+'
+            const count = +counter.innerText.replace(suffix, ""); // Current number
+
+            // Calculate the increment speed based on the target
+            const inc = target / speed;
+
+            if (count < target) {
+                // Add the increment and update the text
+                counter.innerText = Math.ceil(count + inc) + suffix;
+                // Call the function again after a short delay
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target + suffix;
+            }
+        };
+
+        updateCount();
+    });
+};
+
+// Intersection Observer to trigger when visible on screen
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounters();
+            observer.unobserve(entry.target); // Stop observing once animation starts
+        }
+    });
+}, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+
+// Observe the section
+observer.observe(document.querySelector('.about-content'));
 // import { api } from './api.js';
 
 // document.addEventListener('DOMContentLoaded', async () => {

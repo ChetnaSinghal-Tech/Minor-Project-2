@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/main.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -18,7 +20,7 @@
             <li><a href="public/about.html">About</a></li>
 
             <div id="nav-guest" class="nav-group">
-                
+
                 <li><a href="public/login.html">SignIn</a></li>
 
                 <li><a href="public/Register_Donor.html" class="btn-register">Register</a></li>
@@ -64,7 +66,7 @@
             </div>
             <h1>Every Minute Counts.</h1>
             <h2>Find Blood Donors Instantly.</h2>
-            
+
             <div class="type-selector">
                 <p>Select Blood Type for Emergency:</p>
                 <div class="type-tags">
@@ -109,7 +111,7 @@
         <div class="glass-card highlight-content">
             <h2>Join the Movement to Save Lives!</h2>
             <p>
-                Your decision to donate blood can make a life-saving difference. 
+                Your decision to donate blood can make a life-saving difference.
                 Regular blood donation can reduce the risk of heart disease and improve overall health.
             </p>
             <div class="impact-grid">
@@ -126,11 +128,99 @@
         </div>
     </section>
 
+    <section class="stemcell-section">
+        <h2>🧬 Become a Stem Cell Donor</h2>
+        <p>Help save lives by donating bone marrow or stem cells.</p>
+        <a href="#" class="btn" id="openStemModal">Register Now</a>
+    </section>
+
+    <div id="stemModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <h2>🧬 Stem Cell Eligibility Screening</h2>
+
+            <form id="stemForm">
+
+                <p><b>Medical Eligibility Check</b></p>
+
+                <!-- 1 -->
+                <label>Have you ever had cancer?</label>
+                <select id="cancer" required>
+                    <option value="">Select</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <!-- 2 -->
+                <label>Any chronic blood disorders?</label>
+                <select id="blood" required>
+                    <option value="">Select</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <!-- 3 -->
+                <label>Are you currently under long-term medication?</label>
+                <select id="medication" required>
+                    <option value="">Select</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <!-- 4 -->
+                <label>Your weight is above 50 kg?</label>
+                <select id="weight" required>
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <!-- 5 -->
+                <label>Any infectious disease history?</label>
+                <select id="infection" required>
+                    <option value="">Select</option>
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+
+                <br><br>
+
+                <label>
+                    <input type="checkbox" required>
+                    I confirm that all information is true and I agree to be contacted for stem cell donation
+                </label>
+
+                <button type="submit">Submit Screening</button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="about-content">
+        <div class="stat-row">
+            <div class="stat-item">
+                <h3>450+</h3>
+                <p>Hospitals Linked</p>
+            </div>
+            <div class="stat-item">
+                <h3>10k+</h3>
+                <p>Safe Donations</p>
+            </div>
+
+        </div>
+    </div>
+    </section>
+
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
                 <h3 class="footer-logo">🩸 Donix</h3>
-                <p class="footer-desc">Connecting heroes with those in need. Our platform ensures that blood donation is fast, secure, and accessible to everyone.</p>
+                <p class="footer-desc">Connecting heroes with those in need. Our platform ensures that blood donation is
+                    fast, secure, and accessible to everyone.</p>
                 <div class="system-status">
                     <span class="status-dot"></span>
                     System Operational: 24/7 Support
@@ -159,9 +249,10 @@
                 <p class="footer-contact">+1 (555) 000-LIFE</p>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <p>© 2026 Donix. Designed for Life. <span class="divider">|</span> <a href="#">Privacy Policy</a> <span class="divider">|</span> <a href="#">Terms of Service</a></p>
+            <p>© 2026 Donix. Designed for Life. <span class="divider">|</span> <a href="#">Privacy Policy</a> <span
+                    class="divider">|</span> <a href="#">Terms of Service</a></p>
         </div>
     </footer>
 
@@ -169,8 +260,9 @@
     <script type="module" src="js/search.js"></script>
     <script type="module" src="js/auth.js"></script>
 
-    
+
 </body>
+
 </html>
 
 <!-- old versions stored -->
@@ -445,4 +537,4 @@
 </footer>
 <script src="/js/search.js"></script>
 </body>
-</html> -->  
+</html> -->
